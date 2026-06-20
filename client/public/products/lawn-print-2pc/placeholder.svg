@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7a1f2b"/>
+      <stop offset="100%" stop-color="#3a1014"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#g)"/>
+  <rect x="40" y="40" width="520" height="720" fill="none" stroke="#e8c97a" stroke-width="2"/>
+  <text x="300" y="380" font-family="Georgia, serif" font-size="40" fill="#e8c97a" text-anchor="middle">Akbar Fabrics</text>
+  <text x="300" y="430" font-family="Georgia, serif" font-size="28" fill="#ffffff" text-anchor="middle">Lawn Print 2PC</text>
+  <text x="300" y="470" font-family="Georgia, serif" font-size="18" fill="#e8c97a" text-anchor="middle">Photo coming soon</text>
+</svg>
