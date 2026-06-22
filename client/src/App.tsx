@@ -4,45 +4,46 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { CartProvider } from "./contexts/CartContext";
 import Categories from "./pages/Categories";
 import CategoryProducts from "./pages/CategoryProducts";
 import AddProduct from "./pages/AddProduct";
 import Home from "./pages/Home";
-
+import Checkout from "./pages/Checkout";
+import Navbar from "./components/Navbar";
 
 function Router() {
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/categories"} component={Categories} />
-      <Route path={"/categories/:slug"} component={CategoryProducts} />
-      <Route path={"/add-product"} component={AddProduct} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <div className="flex-1">
+        <Switch>
+          <Route path={"/"} component={Home} />
+          <Route path={"/categories"} component={Categories} />
+          <Route path={"/categories/:slug"} component={CategoryProducts} />
+          <Route path={"/add-product"} component={AddProduct} />
+          <Route path={"/checkout"} component={Checkout} />
+          <Route path={"/404"} component={NotFound} />
+          {/* Final fallback route */}
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </div>
   );
 }
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="light">
+        <CartProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </CartProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
 }
-
 export default App;
