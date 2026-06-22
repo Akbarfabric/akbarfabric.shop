@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { getCategories } from "@shared/categories";
+import { categories } from "@shared/categories";
 import { Link } from "wouter";
 
 export default function Home() {
-  const categories = getCategories().slice(0, 6);
+  const displayCategories = categories.slice(0, 6);
 
   return (
     <div className="min-h-screen bg-[#fbf8f2]">
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
+          {displayCategories.map((category) => (
             <Link key={category.slug} href={`/categories/${category.slug}`}>
               <div className="group cursor-pointer overflow-hidden border border-[#d9c089]/20 bg-white transition-all hover:border-[#d9c089]/60 hover:shadow-lg">
                 <div className="relative h-48 bg-[#3a1014] p-8 text-center flex flex-col items-center justify-center transition-colors group-hover:bg-[#4a161b]">

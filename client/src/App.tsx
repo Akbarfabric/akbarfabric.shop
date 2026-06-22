@@ -9,7 +9,7 @@ import Categories from "./pages/Categories";
 import CategoryProducts from "./pages/CategoryProducts";
 import AddProduct from "./pages/AddProduct";
 import Home from "./pages/Home";
-import Checkout from "./pages/Checkout";
+import Checkout from "./pages/CheckoutPage";
 import Navbar from "./components/Navbar";
 
 function Router() {

@@ -47,7 +47,7 @@ export default function Categories() {
       {/* Grid */}
       <main className="mx-auto max-w-6xl px-4 py-10">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
+          {allCategories.map((category) => (
             <CategoryCard
               key={category.id}
               category={category}
